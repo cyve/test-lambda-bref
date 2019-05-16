@@ -13,3 +13,25 @@ Resources:
             Runtime: provided
             Layers:
                 - arn:aws:lambda:us-east-1:209497400698:layer:php-73:6
+
+    HelloHttp:
+        Type: AWS::Serverless::Function
+        Properties:
+            FunctionName: test-lambda-bref-hello-http
+            CodeUri: .
+            Handler: index.php
+            Timeout: 30
+            MemorySize: 512
+            Runtime: provided
+            Layers:
+                - arn:aws:lambda:us-east-1:209497400698:layer:php-73-fpm:6
+            Events:
+                GetHello:
+                    Type: Api
+                    Properties:
+                        Path: /hello
+                        Method: GET
+
+Outputs:
+    HelloHttp:
+        Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/'
