@@ -1,0 +1,18 @@
+{
+    "name": "cyve/test-lambda-bref",
+    "description": "Test of AWS Lambda with Bref",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cyril Vermande",
+            "homepage": "https://www.cyrilwebdesign.com"
+        }
+    ],
+    "require": {
+        "mnapoli/bref": "^0.3.9"
+    },
+    "require-dev": {
+        "aws/aws-sdk-php": "^3.93"
+    }
+}
